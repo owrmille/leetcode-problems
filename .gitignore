@@ -1,0 +1,17 @@
+# Maven / Java build output
+target/
+*.class
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# macOS / editor temp
+*.swp
+*~

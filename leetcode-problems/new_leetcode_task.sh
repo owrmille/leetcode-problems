@@ -82,13 +82,16 @@ write_file() {
 
 write_file "$SOLUTION_FILE" "package ${PACKAGE};
 
-//
-// LeetCode ${ID}: ${TITLE_RAW}
-// Difficulty: ?
-// Topics: ?
-// Approach: ?
-// Time: ?  Space: ?
-//
+/*
+- LeetCode ${ID}: ${TITLE_RAW}
+- Difficulty: 
+- Topics:
+
+- Approach:
+
+- Time:   Space: 
+*/
+
 "
 
 write_file "$TEST_FILE" "package ${PACKAGE};
@@ -100,9 +103,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class SolutionTest {
 
     @Test
-    void sanity() {
-        // Replace with real tests for: ${TITLE_RAW}
-        // Example:
+    void example1() {
         // Solution s = new Solution();
         // assertEquals(expected, s.method(args));
         assertTrue(true);
@@ -124,15 +125,8 @@ write_file "$CASES_FILE" "{
 
 write_file "$NOTES_FILE" "# LeetCode ${ID}: ${TITLE_RAW}
 
-## Idea
-- 
+## Ideas
 
-## Edge cases
-- 
-
-## Complexity
-- Time: 
-- Space: 
 "
 
 echo

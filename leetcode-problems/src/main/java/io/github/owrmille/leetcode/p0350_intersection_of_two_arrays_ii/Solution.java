@@ -13,7 +13,7 @@ Sorting
 1. sort both arrs
 2. scan both: if same elem, add and move; if one less, move inside its arr; if another less - otherwise
 - Time: O(n log n + m log m) for v1; O(n + m) for v2
-- Space: O(k), k - intersection size, for v1;
+- Space: O(k), k - intersection size, for v1; O(min(n, m)) for v2
 
 - Constraints (important to make algo optimal):
 1 <= nums1.length, nums2.length <= 1000 (constraints for both)

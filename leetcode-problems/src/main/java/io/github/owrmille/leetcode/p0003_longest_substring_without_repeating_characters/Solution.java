@@ -24,7 +24,8 @@ we just check if the past duplicate was before the window, or inside it;
 - if inside -> move the window
 - add/update last seen position for any letter anyway
 
-- Time: O(n^2) for v1; O(n) for v2   Space: O(n)
+- Time: worst case O(n^2) for v1; O(n) for v2   
+- Space: O(min(n, alphabet size)) ≈ O(n) for both
 */
 
 class Solution {
@@ -67,7 +68,7 @@ class Solution {
             if (seen.containsKey(letter) && seen.get(letter) >= left) {
                 left = seen.get(letter) + 1;
             }
-            
+
             seen.put(letter, right);
 
             curLen = right - left + 1;

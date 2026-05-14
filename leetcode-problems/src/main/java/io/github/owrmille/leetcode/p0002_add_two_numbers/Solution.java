@@ -13,7 +13,7 @@ Recursion
 - Approach:
 since numbers are reversed, we can start summing their digits from the beginning (from lowest base to highest);
 be carefull with proceeding list, check nulls, keep head and tail (head to return, head to keep adding nodes);
-- Time: O(n+m)   Space: O(n+m)
+- Time: O(max(n,m))   Space: O(max(n,m))
 */
 
 class Solution {

@@ -16,6 +16,7 @@ Sliding Window
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 class Solution {
 
@@ -71,6 +72,65 @@ class Solution {
                 }
                 char c = s.charAt(right);
                 window.put(c,  window.getOrDefault(c, 0) + 1);
+                right++;
+            }
+        }
+
+        return minSubStr;
+    }
+
+    public String optimizedMinWindow(String s, String t) {
+
+        Map<Character, Integer> letters = new HashMap<>();
+
+        // O(n)
+        for (char c : t.toCharArray()) {
+            letters.put(c, letters.getOrDefault(c, 0) + 1);
+        }
+
+        Map<Character, Integer> window = new HashMap<>();
+
+        String minSubStr = "";
+        int minLen = Integer.MAX_VALUE;
+
+        int left = 0;
+        int right = 0;
+
+        int need = letters.size();
+        int have = 0;
+
+        // O(m)
+        while (right <= s.length()) {
+
+            if (need == have) {
+
+                if (right - left < minLen) {
+                    minSubStr = s.substring(left, right);
+                    minLen = minSubStr.length();
+                }
+                char c = s.charAt(left);
+
+                if (letters.containsKey(c) && letters.get(c).equals(window.get(c))) {
+                    have--;
+                }
+
+                window.put(c, window.getOrDefault(c, 1) - 1);
+
+                left++;
+
+            } else {
+
+                if (right == s.length()) {
+                    break;
+                }
+
+                char c = s.charAt(right);
+                window.put(c,  window.getOrDefault(c, 0) + 1);
+
+                if (letters.containsKey(c) && letters.get(c).equals(window.get(c))) {
+                    have++;
+                }
+
                 right++;
             }
         }

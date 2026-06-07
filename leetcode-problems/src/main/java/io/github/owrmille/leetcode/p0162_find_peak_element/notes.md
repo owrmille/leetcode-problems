@@ -1,0 +1,5 @@
+# LeetCode 162: Find Peak Element
+
+## Ideas
+
+
